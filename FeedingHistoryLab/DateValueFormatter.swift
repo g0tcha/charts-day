@@ -32,9 +32,8 @@ extension DateValueFormatter: IAxisValueFormatter {
             return ""
         }
         
-        let timestamp: TimeInterval = (times[Int(value)])
+        let timestamp = (times[Int(value)])
         let hours = timestamp.getHour()
-        
         
         if hours % 6 == 0 {
             return timestamp.getHourWithPeriod()

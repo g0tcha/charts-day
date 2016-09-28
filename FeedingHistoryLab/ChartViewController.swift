@@ -108,7 +108,7 @@ class ChartViewController: UIViewController {
         var dataEntries: [BarChartDataEntry] = []
         
         let now:TimeInterval = Date().timeIntervalSince1970
-        let secondInterval: TimeInterval = 20.0 * 60.0
+        let secondInterval: TimeInterval = 1200.0
         let from:TimeInterval = now - Double(values.count) * secondInterval
         
         // Loop through grams values ...
@@ -166,6 +166,7 @@ class ChartViewController: UIViewController {
         chartView.drawValueAboveBarEnabled = false
         chartView.setVisibleXRange(minXRange: maxVisibleX, maxXRange: maxVisibleX)
         chartView.centerViewTo(xValue: Double(grams.count - maxVisibleX.toInt() / 2), yValue: grams[grams.count - maxVisibleX.toInt() / 2], axis: YAxis.AxisDependency.left)
+        chartView.extraBottomOffset = 15
 
         // X Axis
         xAxis.drawLabelsEnabled = true
@@ -175,8 +176,8 @@ class ChartViewController: UIViewController {
         xAxis.drawGridLinesEnabled = false
         xAxis.valueFormatter = DateValueFormatter(times: times)
         xAxis.labelTextColor = UIColor.white
-        xAxis.granularityEnabled = true
-        xAxis.granularity = 15
+        xAxis.granularityEnabled = false
+        xAxis.setLabelCount(72, force: true)
 
         // Left Axis
         leftAxis.drawLabelsEnabled = false
@@ -239,10 +240,10 @@ private extension ChartViewController {
             if i > 108 {
                 grams.append(1.0)
             } else if i % 10 == 0 || i % 11 == 0 || i % 12 == 0 {
-                grams.append(quantity * Double(cpt))
+                grams.append(quantity * Double(cpt) + 1)
                 cpt += 1
             } else if i == 36 {
-                grams.append(25.0)
+                grams.append(25.0 + 1)
             }
             else {
                 grams.append(1.0)
@@ -267,7 +268,7 @@ private extension ChartViewController {
         
         initialIndex = currentIndex
         
-        let midValue = grams[currentIndex]
+        let midValue = grams[currentIndex] - 1
         
         // DEBUG
         //print("--> INIT - currentIndex = \(currentIndex) currentMin = \(currentMin) currentMax = \(currentMax)")
@@ -291,7 +292,9 @@ private extension ChartViewController {
         
         currentIndex = initialIndex - (grams.count - xMax) + 1
         
-        valueLabel.text = "\(self.grams[self.currentIndex]) g"
+        let value = self.grams[currentIndex] - 1
+        
+        valueLabel.text = "\(value) g"
 
     }
     

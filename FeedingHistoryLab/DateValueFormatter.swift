@@ -9,31 +9,35 @@
 import Foundation
 import Charts
 
-class DateValueFormatter: NSObject, IAxisValueFormatter {
-    var dateFormatter: DateFormatter
-    var times: [TimeInterval]?
+// MARK: - DateValueFormatter
+// -- Return x axis value formatted like "6 PM"s
+class DateValueFormatter: NSObject {
+    var times: [TimeInterval]!
     
     override init() {
-        dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h a"
-        
         super.init()
     }
     
-    convenience init(times: [TimeInterval]) {
-        self.init()
+    init(times: [TimeInterval]) {
+        super.init()
         
         self.times = times
     }
-    
+}
+
+// MARK: - IAxisValueFormatter
+extension DateValueFormatter: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        guard value > 0 && value < 144 else {
+        guard value >= 0 && value < 144 else {
             return ""
         }
         
-        if let timestamp = times?[Int(value)] {
-            let result = dateFormatter.string(from: Date(timeIntervalSince1970: timestamp))
-            return result
+        let timestamp: TimeInterval = (times[Int(value)])
+        let hours = timestamp.getHour()
+        
+        
+        if hours % 6 == 0 {
+            return timestamp.getHourWithPeriod()
         }
         
         return ""

@@ -47,4 +47,17 @@ extension TimeInterval {
         
         return dateFormatter.string(from: Date(timeIntervalSince1970: self))
     }
+    
+    func getHourWithPeriod() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h a"
+        return dateFormatter.string(from: Date(timeIntervalSince1970: self))
+    }
+    
+    // Return hours like "1"
+    func getHour() -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h"
+        return Int(dateFormatter.string(from: Date(timeIntervalSince1970: self)))!
+    }
 }

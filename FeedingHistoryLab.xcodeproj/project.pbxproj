@@ -12,11 +12,12 @@
 		BF2DBD521D8FD5F8000CD5D6 /* StepByStepEmbeddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DBD511D8FD5F8000CD5D6 /* StepByStepEmbeddedViewController.swift */; };
 		BF2DBD541D8FE423000CD5D6 /* FeedingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DBD531D8FE423000CD5D6 /* FeedingTableViewCell.swift */; };
 		BF2DBD571D8FF22E000CD5D6 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DBD561D8FF22E000CD5D6 /* HistoryItem.swift */; };
-		BF38302F1D926D96009E4ABF /* NSDate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF38302E1D926D96009E4ABF /* NSDate+.swift */; };
+		BF38302F1D926D96009E4ABF /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF38302E1D926D96009E4ABF /* Date+.swift */; };
 		BF7388361D9AB80A007C6E30 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7388351D9AB80A007C6E30 /* Double+.swift */; };
 		BF82686D1D9023D2007042D6 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8268661D902368007042D6 /* Charts.framework */; };
 		BF82686E1D9023D2007042D6 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF8268661D902368007042D6 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF8268731D902429007042D6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8268721D902429007042D6 /* ChartViewController.swift */; };
+		BFC3407F1D9BC5E000BBBB54 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3407E1D9BC5E000BBBB54 /* String+.swift */; };
 		BFC6AF281D8C319F00A4AE59 /* FeedingHistoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF271D8C319F00A4AE59 /* FeedingHistoryPageViewController.swift */; };
 		BFC6AF2A1D8C31B600A4AE59 /* SpecificBowlHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF291D8C31B600A4AE59 /* SpecificBowlHistoryViewController.swift */; };
 		BFC6AF2C1D8C31C500A4AE59 /* AllBowlHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF2B1D8C31C500A4AE59 /* AllBowlHistoryViewController.swift */; };
@@ -86,10 +87,11 @@
 		BF2DBD511D8FD5F8000CD5D6 /* StepByStepEmbeddedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepEmbeddedViewController.swift; sourceTree = "<group>"; };
 		BF2DBD531D8FE423000CD5D6 /* FeedingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingTableViewCell.swift; sourceTree = "<group>"; };
 		BF2DBD561D8FF22E000CD5D6 /* HistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
-		BF38302E1D926D96009E4ABF /* NSDate+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+.swift"; sourceTree = "<group>"; };
+		BF38302E1D926D96009E4ABF /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		BF7388351D9AB80A007C6E30 /* Double+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		BF82685E1D902368007042D6 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		BF8268721D902429007042D6 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		BFC3407E1D9BC5E000BBBB54 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		BFC6AF271D8C319F00A4AE59 /* FeedingHistoryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingHistoryPageViewController.swift; sourceTree = "<group>"; };
 		BFC6AF291D8C31B600A4AE59 /* SpecificBowlHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificBowlHistoryViewController.swift; sourceTree = "<group>"; };
 		BFC6AF2B1D8C31C500A4AE59 /* AllBowlHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllBowlHistoryViewController.swift; sourceTree = "<group>"; };
@@ -134,9 +136,10 @@
 		BF38302A1D926D85009E4ABF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BF38302E1D926D96009E4ABF /* NSDate+.swift */,
+				BF38302E1D926D96009E4ABF /* Date+.swift */,
 				BF09A02C1D997EB700FAD48A /* DateValueFormatter.swift */,
 				BF7388351D9AB80A007C6E30 /* Double+.swift */,
+				BFC3407E1D9BC5E000BBBB54 /* String+.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -327,10 +330,11 @@
 				BF2DBD571D8FF22E000CD5D6 /* HistoryItem.swift in Sources */,
 				BFC6AF281D8C319F00A4AE59 /* FeedingHistoryPageViewController.swift in Sources */,
 				BFC6AF2A1D8C31B600A4AE59 /* SpecificBowlHistoryViewController.swift in Sources */,
+				BFC3407F1D9BC5E000BBBB54 /* String+.swift in Sources */,
 				BFF285701D8C2116004981CF /* SAHTitleLabel.swift in Sources */,
 				BF7388361D9AB80A007C6E30 /* Double+.swift in Sources */,
 				BF2DBD521D8FD5F8000CD5D6 /* StepByStepEmbeddedViewController.swift in Sources */,
-				BF38302F1D926D96009E4ABF /* NSDate+.swift in Sources */,
+				BF38302F1D926D96009E4ABF /* Date+.swift in Sources */,
 				BFF2855D1D8C2021004981CF /* AppDelegate.swift in Sources */,
 				BFC6AF2C1D8C31C500A4AE59 /* AllBowlHistoryViewController.swift in Sources */,
 				BF8268731D902429007042D6 /* ChartViewController.swift in Sources */,
